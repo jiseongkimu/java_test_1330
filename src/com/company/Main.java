@@ -42,9 +42,9 @@ public class Main {
                 break;
             }
             /* 범위 내 수를 입력했을 때 */
-            else{
-                Compareto(intput1, intput2);
-            }
+
+            Compareto(intput1, intput2);
+
         }
     }
 }
