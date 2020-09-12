@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d9ea2fe-dde4-4d41-978c-e75a39f372f9" name="Default Changelist" comment="아직 작성중입니다.">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1330/com/company/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1330/com/company/Test10809.class" afterDir="false" />
-    </list>
+    <list default="true" id="2d9ea2fe-dde4-4d41-978c-e75a39f372f9" name="Default Changelist" comment="앗, 커밋도 못한다!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +113,7 @@
       <workItem from="1599832005481" duration="635000" />
       <workItem from="1599834805664" duration="2331000" />
       <workItem from="1599837921382" duration="4863000" />
-      <workItem from="1599873990984" duration="4727000" />
+      <workItem from="1599873990984" duration="5226000" />
     </task>
     <task id="LOCAL-00001" summary="아직 작성중입니다.">
       <created>1599874305992</created>
@@ -126,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599874305992</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="앗, 커밋도 못한다!">
+      <created>1599880077799</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599880077800</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +148,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="아직 작성중입니다." />
-    <option name="LAST_COMMIT_MESSAGE" value="아직 작성중입니다." />
+    <MESSAGE value="앗, 커밋도 못한다!" />
+    <option name="LAST_COMMIT_MESSAGE" value="앗, 커밋도 못한다!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="530" y="281" key="Github.ShareDialog" timestamp="1599832143503">
@@ -176,10 +180,10 @@
       <screen x="0" y="0" width="1304" height="768" />
     </state>
     <state x="153" y="28" key="SettingsEditor/0.0.1304.768@0.0.1304.768" timestamp="1599832093303" />
-    <state x="244" y="116" key="Vcs.Push.Dialog.v2" timestamp="1599879904286">
+    <state x="244" y="116" key="Vcs.Push.Dialog.v2" timestamp="1599880095799">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
-    <state x="244" y="116" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599879904286" />
+    <state x="244" y="116" key="Vcs.Push.Dialog.v2/0.0.1304.768@0.0.1304.768" timestamp="1599880095799" />
     <state x="31" y="0" key="new project wizard" timestamp="1599837889750">
       <screen x="0" y="0" width="1304" height="768" />
     </state>
