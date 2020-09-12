@@ -8,11 +8,10 @@ public class Test10809 {
         String word;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("영단어 입력");
         word = sc.nextLine();
 
         for(char i = 97 ; i < 123 ; i++){
-            System.out.printf("%3d", word.indexOf(i));
+            System.out.print(word.indexOf(i) + " ");
         }
     }
 }
