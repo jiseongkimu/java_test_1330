@@ -12,7 +12,7 @@ public class Test10809 {
         word = sc.nextLine();
 
         for(char i = 97 ; i < 123 ; i++){
-            System.out.println(word.indexOf(i));
+            System.out.printf("%3d", word.indexOf(i));
         }
     }
 }
