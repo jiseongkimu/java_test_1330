@@ -22,11 +22,6 @@ public class Main {
         word = sc.nextLine();
         word = word.trim();
         noblank = word.split("");
-        System.out.println("입력 받은 문자열 : " + word);
-        System.out.printf("앞 뒤 공백 제거 : ");
-        for (String e: noblank)
-            System.out.printf(e);
-        System.out.println("단어 개수 : ");
         System.out.println(count(count, noblank));
     }
 }
