@@ -5,41 +5,28 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static String Compareto(int a, int b){
-        if(a>b)
-            return ">";
-        if(a==b)
-            return "==";
-        if(a<b)
-            return "<";
-
-        return "없음";
+    public static int count(int c, String[] a){
+        for(int i = 0; i < a.length ; i++){
+            if(a[i].equals(" ")){
+                c=c+1;
+            }
+        }
+        return c+1;
     }
 
     public static void main(String[] args) {
-
-        int intput1, intput2, limit;
-        limit = 10000;
-
-        while(true) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("비교 할 두 수를 입력하세요(종료 : 0 0 )");
-            System.out.println("(제한 : -10,000 ≤ A, B ≤ 10,000)");
-            intput1 = sc.nextInt();
-            intput2 = sc.nextInt();
-            if(intput1==0 && intput2==0) {
-                System.out.println("종료합니다");
-                break;
-            }
-            if (-limit > intput1) {
-                System.out.println("첫 번째 수는 " + -limit + "보다 커야합니다.");
-                break;
-            }
-            if (intput2 > limit) {
-                System.out.println("두 번째 수는 " + limit + "보다 작아야합니다.");
-                break;
-            }
-            System.out.println(Compareto(intput1, intput2));
-        }
+        int count = 0;
+        String word;
+        String[] noblank;
+        Scanner sc = new Scanner(System.in);
+        word = sc.nextLine();
+        word = word.trim();
+        noblank = word.split("");
+        System.out.println("입력 받은 문자열 : " + word);
+        System.out.printf("앞 뒤 공백 제거 : ");
+        for (String e: noblank)
+            System.out.printf(e);
+        System.out.println("단어 개수 : ");
+        System.out.println(count(count, noblank));
     }
 }
