@@ -11,14 +11,17 @@ public class Main {
         return array;
     }
 
+    private static void swap(int[] array, int i){
+        int temp = array[i + 1];
+        array[i + 1] = array[i];
+        array[i] = temp;
+    }
+
     private static void bubbleSortArray(int length, int[] array){
         for(int j = 0 ; j < length ; j++){
             for (int i = 0; i < length - 1; i++) {
                 if (array[i] > array[i + 1]) {
-                    int temp = array[i + 1];
-                    array[i + 1] = array[i];
-                    array[i] = temp;
-                    //length--;
+                    swap(array, i);
                 }
             }
         }
