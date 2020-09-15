@@ -21,19 +21,21 @@ public class MyArrayList<E> implements List {
         return arr.length == 0 ? true : false;
     }
 
-    @Override
+    @Override//해당 객체를 가지고 있니?
     public boolean contains(Object o) {
-
+        for(int i = 0 ; i < arr.length-1 ; i++)
+            return arr[i] == o ? true : false;
         return false;
     }
 
-    @Override
+    @Override//몰라
     public Iterator iterator() {
         return null;
     }
 
-    @Override
+    @Override//List 컨테이너의 인스턴스를 배열(array)로 만듦.
     public Object[] toArray() {
+
         return new Object[0];
     }
 
@@ -47,44 +49,49 @@ public class MyArrayList<E> implements List {
         return false;
     }
 
-    @Override
+    @Override//하나의 자료구조에 또 다른 자료구조의 엘리먼트를 넣음
     public boolean addAll(Collection c) {
         return false;
     }
 
-    @Override
+    @Override//index를 명시하여 해당 공간에 addAll()
     public boolean addAll(int index, Collection c) {
         return false;
     }
 
-    @Override
+    @Override//전부 삭제
     public void clear() {
 
     }
 
-    @Override
+    @Override//내부의 엘리먼트를 가져옴
     public Object get(int index) {
-        return null;
+        return arr[index];
     }
 
-    @Override
+    @Override//특정 인덱스에 원하는 값 설정
     public Object set(int index, Object element) {
         return null;
     }
 
-    @Override
+    @Override//특정 인덱스에 값 넣기
     public void add(int index, Object element) {
-
+        for(int i = arr.length-1 ; i > index ; i--) arr[i + 1] = arr[i];
+//      arr[index] = element;
     }
 
-    @Override
+    @Override//특정 인덱스에 값 삭제
     public Object remove(int index) {
+        for(int i = index ; i < arr.length-1 ; i++)
+            arr[i] = arr[i+1];
         return null;
     }
 
-    @Override
+    @Override//해당 엘리먼트의 인덱스를 알려줌
     public int indexOf(Object o) {
-        return 0;
+        for(int i = 0 ; i < arr.length-1 ; i++)
+            return arr[i] == o ? i : -1;
+        //return 0;
     }
 
     @Override
