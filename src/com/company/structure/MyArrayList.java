@@ -12,23 +12,20 @@ public class MyArrayList<E> implements List {
     private E arr[];
 
     @Override
-    public int size() {
-        return arr.length;
-    }
+    public int size() { return arr.length; }
 
     @Override
-    public boolean isEmpty() {
-        return arr.length == 0 ? true : false;
-    }
+    public boolean isEmpty() { return arr.length == 0 ? true : false; }
 
     @Override//해당 객체를 가지고 있니?
     public boolean contains(Object o) {
         for(int i = 0 ; i < arr.length-1 ; i++)
-            return arr[i] == o ? true : false;
+            if(arr[i] == o)
+                return true;
         return false;
     }
 
-    @Override//몰라
+    @Override//@@모릅니다
     public Iterator iterator() {
         return null;
     }
@@ -71,13 +68,17 @@ public class MyArrayList<E> implements List {
 
     @Override//특정 인덱스에 원하는 값 설정
     public Object set(int index, Object element) {
+       // arr[index] = element
         return null;
     }
 
     @Override//특정 인덱스에 값 넣기
     public void add(int index, Object element) {
-        for(int i = arr.length-1 ; i > index ; i--) arr[i + 1] = arr[i];
-//      arr[index] = element;
+        for(int i = arr.length-1 ; i >= index ; i--) {
+            arr[i + 1] = arr[i];
+        }
+        //arr[index] = element;
+
     }
 
     @Override//특정 인덱스에 값 삭제
@@ -90,13 +91,20 @@ public class MyArrayList<E> implements List {
     @Override//해당 엘리먼트의 인덱스를 알려줌
     public int indexOf(Object o) {
         for(int i = 0 ; i < arr.length-1 ; i++)
-            return arr[i] == o ? i : -1;
-        //return 0;
+            if (arr[i] == o)
+                return i;
+        return -1;
     }
 
-    @Override
+    @Override//엘리먼트중 가장 뒤에있는 index출력, 없으면 -1
     public int lastIndexOf(Object o) {
-        return 0;
+        int compare1, compare2;
+        for(int i = 0 ; i < arr.length-1 ; i++) {
+            if (arr[i] == o) {
+                if()
+                compare1 = i;
+            }
+        }
     }
 
     @Override
