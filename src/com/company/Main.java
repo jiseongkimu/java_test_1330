@@ -4,22 +4,42 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static int count_word(int blank, String[] noblank_word){
-        for(int i = 0; i < noblank_word.length ; i++){
-            if(noblank_word[i].equals(" "))
-                blank = blank+1;
+    private static int[] creatArray(int length, int[] array, Scanner sc){
+        for(int i = 0 ; i < length ; i++){
+            array[i] = sc.nextInt();
         }
-        return blank+1;
+        return array;
+    }
+
+    private static void swap(int[] array, int i){
+        int temp = array[i + 1];
+        array[i + 1] = array[i];
+        array[i] = temp;
+    }
+
+    private static void bubbleSortArray(int length, int[] array){
+        for(int j = 0 ; j < length ; j++){
+            for (int i = 0; i < length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    swap(array, i);
+                }
+            }
+        }
+    }
+
+    private static void printArray(int[] array){
+        for (int j : array) {
+            System.out.print(j + " ");
+        }
     }
 
     public static void main(String[] args) {
-        int blank = 0;
-        String word;
-        String[] noblank_word;
+        int[] array = new int[5];
+        int length = array.length;
         Scanner sc = new Scanner(System.in);
-        word = sc.nextLine();
-        word = word.trim();
-        noblank_word = word.split("");
-        System.out.print(count_word(blank, noblank_word));
+
+        array = creatArray(length, array, sc);
+        bubbleSortArray(length, array);
+        printArray(array);
     }
 }
