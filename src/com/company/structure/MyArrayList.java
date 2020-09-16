@@ -9,7 +9,7 @@ import java.util.ListIterator;
   */
 public class MyArrayList<E> implements List {
     
-    private E arr[];
+    private Object[] arr = new Object[100];
 
     @Override
     public int size() { return arr.length; }
@@ -68,23 +68,22 @@ public class MyArrayList<E> implements List {
 
     @Override//특정 인덱스에 원하는 값 설정
     public Object set(int index, Object element) {
-       // arr[index] = element
+        arr[index] = element;
         return null;
     }
 
     @Override//특정 인덱스에 값 넣기
     public void add(int index, Object element) {
-        for(int i = arr.length-1 ; i >= index ; i--) {
-            arr[i + 1] = arr[i];
+        for(int i = arr.length-1 ; i >=index ; i--) {
+            arr[i+1] = arr[i];
         }
-        //arr[index] = element;
-
+        arr[index] = element;
     }
 
-    @Override//특정 인덱스에 값 삭제
+    @Override//특정 인덱스의 값 삭제
     public Object remove(int index) {
-        for(int i = index ; i < arr.length-1 ; i++)
-            arr[i] = arr[i+1];
+        for(int i = index+1 ; i <= arr.length-1 ; i++)
+            arr[i-1] = arr[i];
         return null;
     }
 
