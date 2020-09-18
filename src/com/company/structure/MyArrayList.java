@@ -1,18 +1,17 @@
 package com.company.structure;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
- /*
-    ArrayList LinkedList 차이점 조사
-  */
+import java.util.*;
+
+/*
+   ArrayList LinkedList 차이점 조사
+ */
 public class MyArrayList<E> implements List {
     
-    private Object[] arr = new Object[100];
+    private Object[] arr = new Object[2];
+    private int size = 0;
 
     @Override
-    public int size() { return arr.length; }
+    public int size() { return size; }
 
     @Override
     public boolean isEmpty() { return arr.length == 0 ? true : false; }
@@ -20,7 +19,7 @@ public class MyArrayList<E> implements List {
     @Override//해당 객체를 가지고 있니?
     public boolean contains(Object o) {
         for(int i = 0 ; i < arr.length-1 ; i++)
-            if(arr[i] == o)
+            if (arr[i].equals(o))
                 return true;
         return false;
     }
@@ -38,8 +37,33 @@ public class MyArrayList<E> implements List {
 
     @Override
     public boolean add(Object o) {
-        return false;
+        // 1 2 3  add(4) arr.lenth = 3 size 3
+        increaseArray();
+        arr[size] = o;
+        size++;
+        return true;
     }
+
+    private void increaseArray() {
+        if(arr.length == size) {
+            Object[] newArr = new Object[size * 2];
+            // arr 잇었던 요소들을 newArr로 옮겨주는 작업이 필요함.
+            for(int i =0; i<arr.length; i++)
+                newArr[i] = arr[i];
+
+            arr = newArr;
+        }
+    }
+
+    @Override//특정 인덱스에 값 넣기
+     public void add(int index, Object element) {
+        increaseArray();
+         for(int i = arr.length-1 ; i >= index ; i--) {
+             arr[i] = arr[i+1];
+         }
+         arr[index] = element;
+         size++;
+     }
 
     @Override
     public boolean remove(Object o) {
@@ -58,7 +82,9 @@ public class MyArrayList<E> implements List {
 
     @Override//전부 삭제
     public void clear() {
-
+        for(int i = 0 ; i < arr.length-1 ; i++) {
+            remove(i);
+        }
     }
 
     @Override//내부의 엘리먼트를 가져옴
@@ -72,13 +98,6 @@ public class MyArrayList<E> implements List {
         return null;
     }
 
-    @Override//특정 인덱스에 값 넣기
-    public void add(int index, Object element) {
-        for(int i = arr.length-1 ; i >=index ; i--) {
-            arr[i+1] = arr[i];
-        }
-        arr[index] = element;
-    }
 
     @Override//특정 인덱스의 값 삭제
     public Object remove(int index) {
@@ -97,13 +116,14 @@ public class MyArrayList<E> implements List {
 
     @Override//엘리먼트중 가장 뒤에있는 index출력, 없으면 -1
     public int lastIndexOf(Object o) {
-        int compare1, compare2;
-        for(int i = 0 ; i < arr.length-1 ; i++) {
-            if (arr[i] == o) {
-                if()
-                compare1 = i;
-            }
-        }
+//        int compare1, compare2;
+//        for(int i = 0 ; i < arr.length-1 ; i++) {
+//            if (arr[i] == o) {
+//                //if() 조건식 젠젠 와카라나이
+//                compare1 = i;
+//            }
+    //}
+        return 0;
     }
 
     @Override
@@ -139,5 +159,13 @@ public class MyArrayList<E> implements List {
     @Override
     public Object[] toArray(Object[] a) {
         return new Object[0];
+    }
+
+    @Override
+    public String toString() {
+        return "MyArrayList{" +
+                "arr=" + Arrays.toString(arr) +
+                ", size=" + size +
+                '}';
     }
 }
